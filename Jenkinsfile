@@ -64,7 +64,7 @@ pipeline {
         script {
           echo 'Commit and push to Git Repo .....'
           withCredentials([usernamePassword(credentialsId: 'github-credentials', usernameVariable: 'USER', passwordVariable: 'PWD')]){
-            sh "git remote set-url origin https://${USER}:${PWD}@github.com/ManhTrinhNguyen/jenkins-exercise.git"
+            sh "git remote set-url origin https://${USER}:${PWD}@github.com/ManhTrinhNguyen/AWS-exercise"
 
             sh 'git config --global user.email jenkins@gmail.com'
             sh 'git config --global user.name Jenkins'
