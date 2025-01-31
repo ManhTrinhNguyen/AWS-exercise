@@ -204,3 +204,9 @@ In order to see failing test, remove index.html or rename it and run tests.
     - Connect EC2 and Run Docker in Jenkinsfile : 
   ```
 
+## Using Docker Compose for Deployment 
+  ```
+    - Install docker-compose on EC2 instance : sudo curl -L https://github.com/docker/compose/releases/latest/download/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose . Docker-compose not in the Yum package so I use this command to install. - - Then make it executable sudo chmod +x /usr/local/bin/docker-compose
+    - Create Docker-compose yaml file
+    -  Adjust Jenkins to execute docker-compose command on EC2 instance 1. In the ssh agen block: copy docker-compose to EC2 sh "scp docker-compose.yaml ec2-user@54.215.92.78:/home/ec2-user"
+  ```
